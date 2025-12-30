@@ -11,11 +11,14 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) => {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-pink-100 dark:border-pink-900 bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur-sm px-4 lg:px-10 py-3 shadow-sm transition-colors duration-200">
       <div className="flex items-center gap-8">
-        <Link to="/" className="flex items-center gap-3 text-slate-900 dark:text-white">
-          <div className="size-8 text-primary flex items-center justify-center">
-            <span className="material-symbols-outlined text-3xl">eco</span>
+        <Link to="/" className="flex items-center gap-3 text-slate-900 dark:text-white group">
+          <div className="relative size-10 flex items-center justify-center">
+            {/* Fruit base */}
+            <span className="material-symbols-outlined text-primary text-3xl absolute bottom-0">nutrition</span>
+            {/* Floating Crown */}
+            <span className="material-symbols-outlined text-amber-500 text-lg absolute -top-1 left-1/2 -translate-x-1/2 fill animate-bounce duration-1000">crown</span>
           </div>
-          <h2 className="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Dragon Fruit Depot</h2>
+          <h2 className="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Dragon Fruit King</h2>
         </Link>
         <div className="hidden lg:flex items-center gap-9">
           <NavLink 

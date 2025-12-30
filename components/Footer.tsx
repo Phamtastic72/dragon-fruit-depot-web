@@ -6,9 +6,12 @@ const Footer: React.FC = () => {
     <footer className="w-full bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 py-12 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2 text-slate-900 dark:text-white">
-            <span className="material-symbols-outlined text-primary">eco</span>
-            <h3 className="font-bold text-lg">Dragon Fruit Depot</h3>
+          <div className="flex items-center gap-3 text-slate-900 dark:text-white">
+            <div className="relative size-8 flex items-center justify-center">
+              <span className="material-symbols-outlined text-primary text-2xl absolute bottom-0">nutrition</span>
+              <span className="material-symbols-outlined text-amber-500 text-xs absolute -top-0.5 left-1/2 -translate-x-1/2 fill">crown</span>
+            </div>
+            <h3 className="font-bold text-lg">Dragon Fruit King</h3>
           </div>
           <p className="text-slate-500 dark:text-slate-400 text-sm">Your #1 source for rare and exotic dragon fruit cuttings. Grown with love in Southern California.</p>
         </div>
@@ -41,7 +44,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-slate-400">© 2024 Dragon Fruit Depot. All rights reserved.</p>
+        <p className="text-xs text-slate-400">© 2024 Dragon Fruit King. All rights reserved.</p>
         <div className="flex gap-4">
           <span className="material-symbols-outlined text-slate-300 text-xl">credit_card</span>
         </div>
