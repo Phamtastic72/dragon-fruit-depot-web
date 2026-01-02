@@ -4,8 +4,26 @@ import { BLOG_POSTS } from '../constants';
 
 const Blog: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-10 py-10">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+    <div className="relative max-w-7xl mx-auto px-4 md:px-10 py-10 overflow-hidden">
+      {/* Background Falling Petals */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {[...Array(12)].map((_, i) => (
+          <span 
+            key={i} 
+            className="material-symbols-outlined absolute text-primary-light/20 animate-petal-fall"
+            style={{ 
+              left: `${Math.random() * 100}%`, 
+              animationDelay: `${Math.random() * 10}s`,
+              fontSize: `${12 + Math.random() * 24}px`,
+              animationDuration: `${8 + Math.random() * 7}s`
+            }}
+          >
+            local_florist
+          </span>
+        ))}
+      </div>
+
+      <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-slate-900 dark:text-white leading-[1.1]">
             The Dragon Fruit Diary
@@ -27,7 +45,7 @@ const Blog: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-3 mb-12 border-b border-slate-100 dark:border-slate-800 pb-8">
+      <div className="relative z-10 flex flex-wrap gap-3 mb-12 border-b border-slate-100 dark:border-slate-800 pb-8">
         {['All Posts', 'Growing Guides', 'Pollination', 'Recipes', 'Harvest', 'Shop Updates'].map((tag, i) => (
           <button 
             key={tag}
@@ -39,7 +57,7 @@ const Blog: React.FC = () => {
       </div>
 
       {/* Featured Post */}
-      <div className="mb-16 group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-sm hover:shadow-xl transition-all duration-300">
+      <div className="relative z-10 mb-16 group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-sm hover:shadow-xl transition-all duration-300">
         <div className="grid md:grid-cols-2">
           <div className="h-64 md:h-auto overflow-hidden">
             <img src={BLOG_POSTS[0].image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -62,7 +80,7 @@ const Blog: React.FC = () => {
       </div>
 
       {/* Post Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
         {[...BLOG_POSTS, ...BLOG_POSTS].map((post, i) => (
           <article key={i} className="group flex flex-col h-full bg-white dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
             <div className="aspect-video overflow-hidden">
@@ -85,7 +103,7 @@ const Blog: React.FC = () => {
       <section className="relative overflow-hidden rounded-3xl bg-[#221019] px-6 py-16 text-center">
         <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none" style={{ background: "radial-gradient(circle at top right, #f4258c 0%, transparent 40%), radial-gradient(circle at bottom left, #f4258c 0%, transparent 40%)" }}></div>
         <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-          <span className="material-symbols-outlined text-5xl text-primary mb-4">mail</span>
+          <span className="material-symbols-outlined text-5xl text-primary mb-4 animate-bounce">mail</span>
           <h2 className="text-3xl md:text-4xl font-black text-white">Join the Growing Community</h2>
           <p className="text-slate-400 text-lg">
             Get expert pollination tips, harvest alerts, and exclusive discounts on rare cuttings delivered straight to your inbox.

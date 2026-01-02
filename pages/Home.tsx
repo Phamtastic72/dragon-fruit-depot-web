@@ -1,13 +1,23 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PRODUCTS, BLOG_POSTS } from '../constants';
+import { PRODUCTS, BLOG_POSTS } from '../constants.ts';
 
 const Home: React.FC = () => {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center overflow-x-hidden">
       {/* Hero Section */}
-      <section className="w-full px-4 py-6 md:px-10 lg:py-10">
+      <section className="w-full px-4 py-6 md:px-10 lg:py-10 relative">
+        {/* Animated Hummingbird */}
+        <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
+          <div className="animate-fly-path absolute top-0 left-0">
+            <div className="flex items-center gap-1 text-primary-light">
+               <span className="material-symbols-outlined text-3xl animate-wing-flap">flutter_dash</span>
+               <div className="w-8 h-[1px] bg-gradient-to-r from-primary-light to-transparent opacity-40"></div>
+            </div>
+          </div>
+        </div>
+
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-2xl bg-cover bg-center h-[500px] md:h-[600px] flex items-center justify-center text-center px-4" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZRYAKq-inEegI2POcSB6wFEhkpa8z5b1Mg5jWVKIG-blsVjEbI68wjIjrFIGT-k5kRTKYksiP32akCXyqvF-dwbN3gIveo-pbG3atlqC49PnqtvkgcCGDHsgiUEkCDWo0_gS5rHtHlq3cxt1dWnkfRvb4j7ndwDbCfAID-aHSphOA2l0lX1ODuKYpPMe6ta46TkZf7r9OCffm2Du76NpDxJr0A634s-RWRd54orExIny5hzp-bTzG7kw5PdrtDRBhbHJ3-cCbZVE')" }}>
             <div className="relative z-10 max-w-3xl flex flex-col gap-6 items-center">

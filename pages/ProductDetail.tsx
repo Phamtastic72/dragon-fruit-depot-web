@@ -212,11 +212,16 @@ const ProductDetail: React.FC = () => {
 
           {/* AI Assistant Block */}
           <div className="mt-20 p-8 rounded-2xl bg-[#221019] text-white relative overflow-hidden">
+            {/* Animated Bee pollinating the assistant box */}
+            <div className="absolute top-4 right-4 z-20 pointer-events-none">
+               <span className="material-symbols-outlined text-yellow-400 text-xl animate-bee-hover">emoji_nature</span>
+            </div>
+            
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-4">
-                <div className="size-10 rounded-full bg-primary flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white">smart_toy</span>
+                <div className="size-10 rounded-full bg-primary flex items-center justify-center group">
+                  <span className="material-symbols-outlined text-white transition-all group-hover:animate-bloom">smart_toy</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold">Dragon Fruit AI Assistant</h3>
@@ -273,7 +278,7 @@ const ProductDetail: React.FC = () => {
             </div>
             <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800">
               <Link to="/blog" className="flex items-center gap-3 text-slate-600 dark:text-slate-400 text-sm group">
-                <span className="material-symbols-outlined text-primary">help</span>
+                <span className="material-symbols-outlined text-primary group-hover:animate-bloom">help</span>
                 <p>Need help growing? <span className="text-primary font-bold group-hover:underline">Visit Care Guide</span></p>
               </Link>
             </div>

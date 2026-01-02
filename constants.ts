@@ -1,6 +1,5 @@
 
-// Fix: Added missing Review type to the import from './types'
-import { FleshColor, PollinationType, Product, BlogPost, Review } from './types';
+import { FleshColor, PollinationType, Product, BlogPost, Review } from './types.ts';
 
 export const MOCK_REVIEWS: Review[] = [
   {

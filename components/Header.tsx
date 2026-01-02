@@ -13,12 +13,12 @@ const Header: React.FC<HeaderProps> = ({ isDarkMode, toggleDarkMode }) => {
       <div className="flex items-center gap-8">
         <Link to="/" className="flex items-center gap-3 text-slate-900 dark:text-white group">
           <div className="relative size-10 flex items-center justify-center">
-            {/* Fruit base */}
-            <span className="material-symbols-outlined text-primary text-3xl absolute bottom-0">nutrition</span>
+            {/* Fruit base with bloom animation on group hover */}
+            <span className="material-symbols-outlined text-primary text-3xl absolute bottom-0 transition-all duration-700 group-hover:animate-bloom">nutrition</span>
             {/* Floating Crown */}
             <span className="material-symbols-outlined text-amber-500 text-lg absolute -top-1 left-1/2 -translate-x-1/2 fill animate-bounce duration-1000">crown</span>
           </div>
-          <h2 className="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Dragon Fruit King</h2>
+          <h2 className="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] group-hover:text-primary transition-colors">Dragon Fruit King</h2>
         </Link>
         <div className="hidden lg:flex items-center gap-9">
           <NavLink 
