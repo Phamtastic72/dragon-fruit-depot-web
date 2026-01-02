@@ -1,10 +1,20 @@
+
 import { GoogleGenAI } from "@google/genai";
 
-// Fix: Initialized GoogleGenAI strictly using process.env.API_KEY as per coding guidelines.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Lazy-initialize the AI client to prevent top-level crashes
+let aiInstance: GoogleGenAI | null = null;
+
+const getAI = () => {
+  if (!aiInstance) {
+    const apiKey = process.env.API_KEY || "";
+    aiInstance = new GoogleGenAI({ apiKey });
+  }
+  return aiInstance;
+};
 
 export const askDragonFruitAssistant = async (prompt: string) => {
   try {
+    const ai = getAI();
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: prompt,
